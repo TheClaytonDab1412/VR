@@ -4,6 +4,8 @@
     <script src="https://unpkg.com/aframe-physics-system@1.5.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-thumb-controls-component@1.1.0/dist/aframe-thumb-controls-component.min.js"></script>
   </head>
   <body>
     <a-scene physics>
@@ -12,15 +14,21 @@
           src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
       </a-assets>
       <a-sky src="#skyTexture"></a-sky>
-      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
-      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left; 
+        handModelStyle: lowPoly; color: #15ACCF"
+        teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right; 
+      handModelStyle: lowPoly; color: #15ACCF"></a-entity>
+      <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0">
+        <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" visible="true"></a-entity>
+      </a-entity>
       <a-entity id="main_room">
-        <a-plane position="2 1.25 -3" rotation="0 -90 0" width="10" height="2.5" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="-2 1.25 -3" rotation="0 90 0" width="10" height="2.5" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="0 1.25 2" rotation="0 -180 0" width="4" height="2.5" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="0 1.25 -8" rotation="0 0 0" width="4" height="2.5" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane id="celing" position="0 2.5 -3" rotation="90 0 0" width="4" height="10" color="#8C8C8C" static-body></a-plane>></a-plane>
-        <a-plane id="floor" position="0 0 -3" rotation="-90 0 0" width="4" height="10" color="#8C8C8C" static-body></a-plane>></a-plane>
+        <a-plane position="2 1.25 -3" rotation="0 -90 0" width="10" height="2.5" color="#C37E50" static-body></a-plane>
+        <a-plane position="-2 1.25 -3" rotation="0 90 0" width="10" height="2.5" color="#C37E50" static-body></a-plane>
+        <a-plane position="0 1.25 2" rotation="0 -180 0" width="4" height="2.5" color="#C37E50" static-body></a-plane>
+        <a-plane position="0 1.25 -8" rotation="0 0 0" width="4" height="2.5" color="#C37E50" static-body></a-plane>
+        <a-plane id="celing" position="0 2.5 -3" rotation="90 0 0" width="4" height="10" color="#8C8C8C" static-body></a-plane>
+        <a-plane id="floor" position="0 0 -3" rotation="-90 0 0" width="4" height="10" color="#8C8C8C" static-body nav-mesh=""></a-plane>
         <a-box id="counter" position="0 0.4 -1" rotation="0 0 0" depth="0.5" width="2" height="0.8" color="#C37E50" static-body></a-box>
         <a-box id="counter_top" position="0 0.8 -1" rotation="0 0 0" depth="0.75" width="2" height="0.125" color="#000000" static-body></a-box>
         <a-box position="-1.5 1.25 -1" rotation="0 0 0" depth="0.5" width="1" height="2.5" color="#C37E50" static-body></a-box>
