@@ -15,12 +15,14 @@
       <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
       <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
       <a-entity id="main_room">
-        <a-plane position="3 2 -4" rotation="0 -90 0" width="8" height="4" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="-3 2 -4" rotation="0 90 0" width="8" height="4" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="0 2 0" rotation="0 -180 0" width="8" height="4" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="0 2 -8" rotation="0 0 0" width="8" height="4" color="#C37E50" static-body></a-plane>></a-plane>
-        <a-plane position="0 4 -4" rotation="90 0 0" width="6" height="8" color="#8C8C8C" static-body></a-plane>></a-plane>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="6" height="8" color="#8C8C8C" static-body></a-plane>></a-plane>
+        <a-plane position="3 2 -3" rotation="0 -90 0" width="10" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="-3 2 -3" rotation="0 90 0" width="10" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="0 2 2" rotation="0 -180 0" width="6" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="0 2 -8" rotation="0 0 0" width="6" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane id="celing" position="0 4 -3" rotation="90 0 0" width="6" height="10" color="#8C8C8C" static-body></a-plane>></a-plane>
+        <a-plane id="floor" position="0 0 -3" rotation="-90 0 0" width="6" height="10" color="#8C8C8C" static-body></a-plane>></a-plane>
+        <a-box id="counter" position="0 0 0" rotation="0 0 0" width="6" height="1" color="#C37E50" static-body></a-box>
+        <a-box id="counter_top" position="0 0 0" rotation="0 0 0" width="6" height="1" color="#C37E50" static-body></a-box>
       </a-entity>
     </a-scene>
   </body>
