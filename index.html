@@ -1,25 +1,26 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.5.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
   </head>
   <body>
     <a-scene xr-mode-ui="enabled: true">
-            <a-assets>
+      <a-assets>
         <img id="skyTexture"
           src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
       </a-assets>
       <a-sky src="#skyTexture"></a-sky>
-      <a-entity vive-controls="hand: left"></a-entity>
-      <a-entity vive-controls="hand: right"></a-entity>
-      <a-entity hand-controls="left"></a-entity>
-      <a-entity hand-controls="right"></a-entity>
-      <a-entity>
-        <a-plane position="2 2 0" rotation="0 -90 0" width="4" height="4" color="#C37E50"></a-plane>
-        <a-plane position="-2 2 0" rotation="0 90 0" width="4" height="4" color="#C37E50"></a-plane>
-        <a-plane position="0 2 2" rotation="0 -180 0" width="4" height="4" color="#C37E50"></a-plane>
-        <a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#C37E50"></a-plane>
-        <a-plane position="0 4 0" rotation="90 0 0" width="4" height="4" color="#8C8C8C"></a-plane>
-        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#8C8C8C"></a-plane>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+      <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+      <a-entity id="main_room">
+        <a-plane position="2 2 0" rotation="0 -90 0" width="4" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="-2 2 0" rotation="0 90 0" width="4" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="0 2 2" rotation="0 -180 0" width="4" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#C37E50" static-body></a-plane>></a-plane>
+        <a-plane position="0 4 0" rotation="90 0 0" width="4" height="4" color="#8C8C8C" static-body></a-plane>></a-plane>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#8C8C8C" static-body></a-plane>></a-plane>
       </a-entity>
     </a-scene>
   </body>
