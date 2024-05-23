@@ -4,8 +4,19 @@
   </head>
   <body>
     <a-scene xr-mode-ui="enabled: true">
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#FFFFF"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
+      <a-entity vive-controls="hand: left"></a-entity>
+      <a-entity vive-controls="hand: right"></a-entity>
+      <a-entity hand-controls="left"></a-entity>
+      <a-entity hand-controls="right"></a-entity>
+      <a-entity>
+        <a-plane position="-2 2 0" rotation="0 -180 0" width="4" height="4" color="#C37E50"></a-plane>
+        <a-plane position="-2 2 0" rotation="0 0 0" width="4" height="4" color="#C37E50"></a-plane>
+        <a-plane position="0 2 2" rotation="0 -180 0" width="4" height="4" color="#C37E50"></a-plane>
+        <a-plane position="0 2 -2" rotation="0 0 0" width="4" height="4" color="#C37E50"></a-plane>
+        <a-plane position="0 4 0" rotation="-90 0 0" width="4" height="4" color="#8C8C8C"></a-plane>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#8C8C8C"></a-plane>
+      </a-entity>
     </a-scene>
   </body>
 </html>
